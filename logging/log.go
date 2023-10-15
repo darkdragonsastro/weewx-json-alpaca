@@ -24,12 +24,6 @@ func Initialize(c env.Config) *zap.Logger {
 	))
 
 	log = log.With(
-		zap.String("app_name", c.AppName),
-		zap.String("environment", c.Environment),
-		zap.String("build_git_hash", c.BuildGitHash),
-		zap.String("build_git_tag", c.BuildGitTag),
-		zap.Time("build_date", c.BuildDate),
-		zap.String("team", c.TeamName),
 		zap.String("run_id", uuid.New().String()),
 		zap.Time("start_time", time.Now()),
 	)

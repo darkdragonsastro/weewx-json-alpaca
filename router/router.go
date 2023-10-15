@@ -5,7 +5,6 @@ import (
 	"net/http"
 
 	"github.com/go-chi/chi"
-	"github.com/go-chi/cors"
 	"go.uber.org/zap"
 
 	"github.com/darkdragonsastro/weewx-json-alpaca/middleware"
@@ -52,21 +51,11 @@ type Handler interface {
 
 // NewRouter creates a new CORS enabled router for our API. All requests will be logged and
 // instrumented with New Relic.
-func NewRouter(h Handler, log *zap.Logger, version, corsOrigin string) http.Handler {
+func NewRouter(h Handler, log *zap.Logger) http.Handler {
 	r := chi.NewRouter()
 
-	cors := cors.New(cors.Options{
-		AllowedOrigins:   []string{corsOrigin},
-		AllowedMethods:   []string{"GET", "POST", "PUT", "DELETE", "OPTIONS"},
-		AllowedHeaders:   []string{"*"},
-		AllowCredentials: true,
-		MaxAge:           300,
-	})
-
-	r.Use(middleware.Version(version))
 	r.Use(middleware.TraceID)
 	r.Use(middleware.Logger(log))
-	r.Use(cors.Handler)
 	r.Use(middleware.Alpaca)
 	r.NotFound(h.NotFound)
 

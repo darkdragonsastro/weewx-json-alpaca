@@ -22,7 +22,6 @@ type config struct {
 	env.Config
 	ListenIPAddress string `env:"LISTEN_IP,required"`
 	ListenPort      int    `env:"LISTEN_PORT,required"`
-	CORSOrigin      string `env:"CORS_ORIGIN,required"`
 	WeeWxURL        string `env:"WEEWX_URL,required"`
 }
 
@@ -53,7 +52,7 @@ func main() {
 
 	h := handler.New(weewx.NewClient(c.WeeWxURL, log))
 
-	r := router.NewRouter(h, log, c.BuildGitTag, c.CORSOrigin)
+	r := router.NewRouter(h, log)
 
 	err = startHTTPServer(r, log, fmt.Sprintf("%s:%d", c.ListenIPAddress, c.ListenPort))
 	if err != nil {
