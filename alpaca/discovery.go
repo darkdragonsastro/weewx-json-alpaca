@@ -3,6 +3,7 @@ package alpaca
 import (
 	"fmt"
 	"net"
+	"time"
 
 	"go.uber.org/zap"
 )
@@ -10,22 +11,36 @@ import (
 type AlpacaDiscovery struct {
 	log  *zap.Logger
 	port int
+	stop bool
 }
 
 func NewAlpacaDiscovery(log *zap.Logger, port int) *AlpacaDiscovery {
 	return &AlpacaDiscovery{
 		log:  log,
 		port: port,
+		stop: false,
 	}
 }
 
 // Handle incoming UDP packets.
 func (a *AlpacaDiscovery) handleDiscovery(conn *net.UDPConn) {
 	for {
+		if a.stop {
+			break
+		}
+
 		buf := make([]byte, 16)
+
+		conn.SetReadDeadline((time.Now().Add(time.Second * 5)))
+
 		n, addr, err := conn.ReadFromUDP(buf)
 		if err != nil {
-			fmt.Println("Error: ", err)
+			if err.(net.Error).Timeout() {
+				continue
+			}
+
+			a.log.Error("Error reading UDP packet", zap.Error(err))
+			continue
 		}
 
 		a.log.Info("Received UDP packet", zap.String("packet", string(buf[0:n])))
@@ -51,4 +66,8 @@ func (a *AlpacaDiscovery) StartDiscovery() error {
 	go a.handleDiscovery(conn)
 
 	return nil
+}
+
+func (a *AlpacaDiscovery) StopDiscovery() {
+	a.stop = true
 }

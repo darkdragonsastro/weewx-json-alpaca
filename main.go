@@ -59,6 +59,10 @@ func main() {
 		log.Error("error starting server", zap.Error(err))
 		return
 	}
+
+	discovery.StopDiscovery()
+
+	log.Info("exiting")
 }
 
 func startHTTPServer(h http.Handler, log *zap.Logger, serverAddr string) error {
