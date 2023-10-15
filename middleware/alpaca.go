@@ -6,7 +6,7 @@ import (
 	"strings"
 	"sync/atomic"
 
-	"github.com/darkdragons/weewx-json-alpaca/alpaca"
+	"github.com/darkdragonsastro/weewx-json-alpaca/alpaca"
 )
 
 var serverTransactionID atomic.Int64

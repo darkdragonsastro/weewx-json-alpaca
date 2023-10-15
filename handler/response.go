@@ -9,7 +9,7 @@ import (
 
 	"go.uber.org/zap"
 
-	"github.com/darkdragons/weewx-json-alpaca/logging"
+	"github.com/darkdragonsastro/weewx-json-alpaca/logging"
 )
 
 // SimpleResponse is used to send a meaningful message back to the caller, with

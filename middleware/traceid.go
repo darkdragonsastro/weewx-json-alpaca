@@ -5,7 +5,7 @@ import (
 
 	"github.com/google/uuid"
 
-	"github.com/darkdragons/weewx-json-alpaca/tracing"
+	"github.com/darkdragonsastro/weewx-json-alpaca/tracing"
 )
 
 // TraceID tries to read the X-Trace-Id request header, and if empty, creates

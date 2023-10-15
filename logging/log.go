@@ -8,7 +8,7 @@ import (
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
 
-	"github.com/darkdragons/weewx-json-alpaca/env"
+	"github.com/darkdragonsastro/weewx-json-alpaca/env"
 )
 
 // Initialize creates a new JSON zap logger.

@@ -8,7 +8,7 @@ import (
 	"github.com/go-chi/cors"
 	"go.uber.org/zap"
 
-	"github.com/darkdragons/weewx-json-alpaca/middleware"
+	"github.com/darkdragonsastro/weewx-json-alpaca/middleware"
 )
 
 // Handler exposes the functions for handling web requests.

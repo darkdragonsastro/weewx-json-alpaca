@@ -1,4 +1,4 @@
-module github.com/darkdragons/weewx-json-alpaca
+module github.com/darkdragonsastro/weewx-json-alpaca
 
 go 1.21.2
 

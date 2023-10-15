@@ -7,8 +7,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/darkdragons/weewx-json-alpaca/alpaca"
-	"github.com/darkdragons/weewx-json-alpaca/tracing"
+	"github.com/darkdragonsastro/weewx-json-alpaca/alpaca"
+	"github.com/darkdragonsastro/weewx-json-alpaca/tracing"
 )
 
 func (h *Handler) GetAveragePeriod(w http.ResponseWriter, r *http.Request) {

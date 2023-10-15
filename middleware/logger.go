@@ -9,8 +9,8 @@ import (
 	"github.com/go-chi/chi/middleware"
 	"go.uber.org/zap"
 
-	"github.com/darkdragons/weewx-json-alpaca/logging"
-	"github.com/darkdragons/weewx-json-alpaca/tracing"
+	"github.com/darkdragonsastro/weewx-json-alpaca/logging"
+	"github.com/darkdragonsastro/weewx-json-alpaca/tracing"
 )
 
 // Logger middleware logs each request and adds the logger to the request

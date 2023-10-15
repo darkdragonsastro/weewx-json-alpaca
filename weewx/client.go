@@ -9,7 +9,7 @@ import (
 
 	"go.uber.org/zap"
 
-	"github.com/darkdragons/weewx-json-alpaca/httputil"
+	"github.com/darkdragonsastro/weewx-json-alpaca/httputil"
 )
 
 type ObservingConditions struct {

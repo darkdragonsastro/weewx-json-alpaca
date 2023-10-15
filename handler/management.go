@@ -4,7 +4,7 @@ package handler
 import (
 	"net/http"
 
-	"github.com/darkdragons/weewx-json-alpaca/alpaca"
+	"github.com/darkdragonsastro/weewx-json-alpaca/alpaca"
 )
 
 func (h *Handler) ApiVersions(w http.ResponseWriter, r *http.Request) {

@@ -5,8 +5,8 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/darkdragons/weewx-json-alpaca/alpaca"
-	"github.com/darkdragons/weewx-json-alpaca/logging"
+	"github.com/darkdragonsastro/weewx-json-alpaca/alpaca"
+	"github.com/darkdragonsastro/weewx-json-alpaca/logging"
 	"go.uber.org/zap"
 )
 

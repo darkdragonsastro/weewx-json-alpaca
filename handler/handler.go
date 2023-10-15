@@ -9,8 +9,8 @@ import (
 	"github.com/go-chi/chi"
 	"github.com/gorilla/schema"
 
-	"github.com/darkdragons/weewx-json-alpaca/tracing"
-	"github.com/darkdragons/weewx-json-alpaca/weewx"
+	"github.com/darkdragonsastro/weewx-json-alpaca/tracing"
+	"github.com/darkdragonsastro/weewx-json-alpaca/weewx"
 )
 
 var decoder = schema.NewDecoder()

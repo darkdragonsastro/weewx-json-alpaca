@@ -9,8 +9,8 @@ import (
 	"github.com/google/uuid"
 	"go.uber.org/zap"
 
-	"github.com/darkdragons/weewx-json-alpaca/logging"
-	"github.com/darkdragons/weewx-json-alpaca/tracing"
+	"github.com/darkdragonsastro/weewx-json-alpaca/logging"
+	"github.com/darkdragonsastro/weewx-json-alpaca/tracing"
 )
 
 // HeaderTransport is an http.RoundTripper that will add a header to all requests.

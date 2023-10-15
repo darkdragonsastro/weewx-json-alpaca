@@ -9,13 +9,13 @@ import (
 
 	"go.uber.org/zap"
 
-	"github.com/darkdragons/weewx-json-alpaca/alpaca"
-	"github.com/darkdragons/weewx-json-alpaca/env"
-	"github.com/darkdragons/weewx-json-alpaca/handler"
-	"github.com/darkdragons/weewx-json-alpaca/logging"
-	"github.com/darkdragons/weewx-json-alpaca/router"
-	"github.com/darkdragons/weewx-json-alpaca/server"
-	"github.com/darkdragons/weewx-json-alpaca/weewx"
+	"github.com/darkdragonsastro/weewx-json-alpaca/alpaca"
+	"github.com/darkdragonsastro/weewx-json-alpaca/env"
+	"github.com/darkdragonsastro/weewx-json-alpaca/handler"
+	"github.com/darkdragonsastro/weewx-json-alpaca/logging"
+	"github.com/darkdragonsastro/weewx-json-alpaca/router"
+	"github.com/darkdragonsastro/weewx-json-alpaca/server"
+	"github.com/darkdragonsastro/weewx-json-alpaca/weewx"
 )
 
 type config struct {
