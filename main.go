@@ -50,7 +50,10 @@ func main() {
 
 	discovery.StartDiscovery()
 
-	h := handler.New(weewx.NewClient(c.WeeWxURL, log))
+	client := weewx.NewClient(c.WeeWxURL, log)
+	client.Start()
+
+	h := handler.New(client)
 
 	r := router.NewRouter(h, log)
 
@@ -61,6 +64,7 @@ func main() {
 	}
 
 	discovery.StopDiscovery()
+	client.Stop()
 
 	log.Info("exiting")
 }

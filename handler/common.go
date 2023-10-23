@@ -82,7 +82,6 @@ func (h *Handler) GetConnected(w http.ResponseWriter, r *http.Request) {
 
 func (h *Handler) PutConnected(w http.ResponseWriter, r *http.Request) {
 	ctx := alpaca.FromContext(r.Context())
-	oc := h.weewx.GetCurrent()
 
 	err := r.ParseForm()
 	if err != nil {
@@ -107,14 +106,6 @@ func (h *Handler) PutConnected(w http.ResponseWriter, r *http.Request) {
 
 		writeResponse(r, w, http.StatusBadRequest, nil)
 		return
-	}
-
-	if req.Connected && !oc.Connected {
-		h.weewx.Start()
-	}
-
-	if !req.Connected && oc.Connected {
-		h.weewx.Stop()
 	}
 
 	writeResponse(r, w, http.StatusOK, &AlpacaResponse{
